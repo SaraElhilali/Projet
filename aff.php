@@ -28,7 +28,7 @@
                   while($rows=mysqli_fetch_assoc($query)){ 
                      $id=$rows['id'];
                     echo "<tr>";
-                    echo "<td>{$rows['image']}</td>";
+                    echo "<td><img src='{$rows['image']}' alt='Image'></td>";
                     echo "<td>{$rows['titre']}</td>";
                     echo "<td>{$rows['description']}</td>";
                     echo "<td class='bouton-container'>";

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier si un fichier a été téléchargé avec succès
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
         // Dossier de destination pour l'image (assurez-vous d'avoir les permissions d'écriture)
-        $uploadDir = "/xampp/htdocs/projet/souspro/image.jpg";
+        $uploadDir = "/projet/images/image.jpg";
         // Nom du fichier
         $fileName = basename($_FILES["image"]["image.jpg"]);
         // Chemin complet du fichier sur le serveur
@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Déplacer le fichier téléchargé vers le dossier de destination
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadPath)) {
             // Enregistrez le chemin du fichier dans la base de données
-            $sql = "INSERT INTO souspro (`titre`, `description`,'/xampp/htdocs/projet/souspro/image.jpg') VALUES (' $titre', ' $description','$uploadPath')";
-            
+            // $sql = "INSERT INTO souspro (`titre`, `description`,'/xampp/htdocs/projet/souspro/image.jpg') VALUES (' $titre', ' $description','$uploadPath')";
+            $sql = "INSERT INTO souspro (`titre`, `description`, `image`) VALUES ('$titre', '$description', '$uploadPath')";
             if ($conn->query($sql) === TRUE) {
                 echo "L'image a été enregistrée avec succès dans la base de données.";
             } else {

@@ -67,7 +67,7 @@
   </style>
   </head>
 <body>
-<form action="CON2.php" method="POST" enctype="multipart/form-data">
+<form action="traitement.php" method="POST" enctype="multipart/form-data">
     <label for="titre">Titre :</label>
     <input type="text" id="titre" name="titre" required>
 

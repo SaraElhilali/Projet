@@ -16,7 +16,7 @@ else{
 }
 
 require 'conn.php';
-$requete="INSERT INTO souspro (`titre`, `description`, `image`) VALUES (' $titre', ' $description', '  $image')";
+$requete="INSERT INTO souspro (`titre`, `description`, `image`) VALUES (' $titre', ' $description', '$image')";
 $query=mysqli_query($conn,$requete);
 if(isset($query)){
     echo "<h1> insertion avec succ</h1>";
